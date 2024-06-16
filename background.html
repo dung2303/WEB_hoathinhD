@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoathinhD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-lQ0RczVlnx6RFzxdRTPj4d8NXVv9+7u2BwSP6Y0gdE1KAP+7h7p9Zf8AD0wIL0un4VDmJxAL1SY73EBCZ/bDjA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .in::placeholder{
+        font-size: 14px;
+    }
+</style>
+<body class="halimthemes">
+    <header>
+        <div class="logo">
+            <a href="https://hoathinh3d.us/">
+            <div class="logo0">
+                <img width="200px" src="logoHoathinh.webp" alt="">
+            </div>
+            </a>
+        </div>
+        <div id="search" class="search">
+            <form id="search-form-pc" name="halimForm" role="search" method="GET">
+            <div>
+            <input type="text" id="in" placeholder="Tìm kiếm..." onkeyup="search-up()">
+            <i class="fas fa-search"></i>
+            </div>
+            </form>
+            <ul class="ui-autocomplete ajax-results" style="display: none;">
+                <li>Vui lòng nhập một từ khóa</li>
+            </ul>
+            <div id="product-list" class="product-list">
+            </div>
+        </div>
+        <div class="icon">
+            <button style="font-size: 30px;"><i class="fa-solid fa-clock-rotate-left"></i></button>
+            <button style="font-size: 30px;"><i class="fa-solid fa-bookmark"></i></button>
+            <button style="font-size: 30px;"><i class="fa-solid fa-star"></i></button>
+            <button style="font-size: 30px;"><i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+    </header>
+    <div class="navbar-container">
+        <a href="https://hoathinh3d.us/">
+        <li><button class="ic"><i class="fa-solid fa-house"></i>Trang chủ</button></li>
+        </a>
+        <li><button class="ic">Thể loại <i class="fa-solid fa-caret-down" style="margin-right: -6px;"></i></button>
+            <ul class="sub-net">
+                <li><a href="">Huyền Huyễn</a></li>
+                <li><a href="">Xuyên Không</a></li>
+                <li><a href="">Trùng Sinh</a></li>
+                <li><a href="">Tiên Hiệp</a></li>
+                <li><a href="">Cổ Trang</a></li>
+                <li><a href="">Hài Hước</a></li>
+                <li><a href="">Kiếm Hiệp</a></li>
+                <li><a href="">Hiện Đại</a></li>
+            </ul>
+        
+        </li>
+        <li><button class="ic"><i class="fa-solid fa-film"></i>Phim lẻ</button></li>
+        <li><button class="ic"><i class="fa-solid fa-rotate"></i>Đang chiếu</button></li>
+        <li><button class="ic"><i class="fa-solid fa-calendar-xmark"></i>Lịch chiếu</button></li>
+        <li><button class="ic"><i class="fa-regular fa-circle-check"></i>Hoàn thành</button></li>
+        <li><button class="ic"><i class="fa-solid fa-clock"></i>Sắp chiếu</button></li>
+        <li><button class="ic"><i class="fa-solid fa-trophy"></i>Top 10 HH3D</button></li>
+        <li><button class="ic"><i class="fa-solid fa-thumbs-up"></i>Đáng xem</button></li>
+    </div>   
+    <div class="container">
+    <div class="row container" id="wrapper">
+        <main id="main-contents" class="col-xs-12 col-sm-12 col-md-8"> 
+        <section id="slider">
+            <div class="im">
+                <img src="hoagiangho.webp" alt="">
+                <img src="dau-la-dai-luc.webp" alt="">
+                <img src="pham-nhan-tu-tien.webp" alt="">
+                <img src="than-an-vuong-toa.jpg" alt="">
+                <img src="tru-tien.webp">
+                <img src="tu-la-vo-than.jpg">
+                <img src="luyen-khi-10-van-nam.webp">
+                <img src="gia-thien.jpg">
+                <img src="tien-nghich.jpg">
+            </div>
+            <div class="dot-container">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        <!-- </section> -->
+        <div class="date">
+            <button class="button-active" style="background-color:darkcyan">Mới <br>Cập Nhập</button>
+            <button>Mon <br>Thứ Hai</button>
+            <button>Wed <br>Thứ Ba</button>
+            <button>Tue <br>Thứ Tư</button>
+            <button>Thu <br>Thứ Năm</button>
+            <button>Fri <br>Thứ Sáu</button>
+            <button>Sat <br>Thứ Bảy</button>
+            <button>Sun <br>Chủ Nhật</button>
+        </div>
+        <div class="section-bar clearfix">
+            <h4 class="section-title">
+                <span>
+                    MỚI CẬP NHẬT
+                </span>
+            </h4>
+        </div>
+        <div class="md">
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-111">
+        <a class="halim-thumb" href="https://hoathinh3d.us/dai-chua-te">
+            <div class="film">
+        <figure>
+            <img class="photo" src="dai-chua-te-300x450.webp" alt="">
+        </figure> 
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Đại Chúa Tể</h2>
+            <p class="original-title">Dai Zhu Zai</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-222">
+        <a class="halim-thumb" href="https://hoathinh3d.us/dau-la-dai-luc-2-tuyet-the-duong-mon">
+            <div class="film">
+        <figure>
+            <img class="photo" src="dau-la-dai-luc-2-tuyet-the-duong-mon-3-300x450.webp" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Đấu La Đại Lục 2: Tuyệt Thế Đường Môn</h2>
+            <p class="original-title">Douluo Dalu II: Jue Shi Tang Men</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-347">
+        <a class="halim-thumb" href="https://hoathinh3d.us/dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien-3-300x450.webp" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Đấu Phá Thương Khung Phần 5</h2>
+            <p class="original-title">Fights Break Phere 5</p> 
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-344">
+        <a class="halim-thumb" href="https://hoathinh3d.us/than-an-vuong-toa">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="than-an-vuong-toa-2-300x450.webp" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Thần Ấn Vương Tọa Phần 2</h2>
+            <p class="original-title">Throne Of Seal</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-345">
+        <a class="halim-thumb" href="https://hoathinh3d.us/the-gioi-hoan-my">
+            <div class="film">
+        <figure>
+            <img class="photo" src="the-gioi-hoan-my-4-300x450.jpg" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Thế Giới Hoàn Mỹ</h2>
+            <p class="original-title">Perfect World</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-235">
+        <a class="halim-thumb" href="https://hoathinh3d.us/thon-phe-tinh-khong">
+            <div class="film">
+        <figure>
+            <img class="photo" src="thon-phe-tinh-khong-4-300x450.jpg" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Thôn Phệ Tinh Không</h2>
+            <p class="original-title">Swallowed Star</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-128">
+        <a class="halim-thumb" href="https://hoathinh3d.us/tien-nghich">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="tien-nghich-2-300x450.webp" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Tiên Nghịch</h2>
+            <p class="original-title">Xian Ni</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-127">
+        <a class="halim-thumb" href="https://hoathinh3d.us/tru-tien">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="tru-tien-phan-2-2024-300x450.webp" alt="">
+        </figure>    
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Tru Tiên Phần 2</h2>
+            <p class="original-title">Jande Dynasty</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-126">
+        <a class="halim-thumb" href="https://hoathinh3d.us/luyen-khi-muoi-van-nam">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="luyen-khi-muoi-van-nam-1-300x450.webp" alt="">
+        </figure>   
+        <div class="halim-post-title-box">
+            <div class="halim-post-title"> 
+            <h2 class="entry-title">Luyện Khí Mười Vạn Năm</h2>
+            <p class="original-title">Lian Qi Shi Wan Nian</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-125">
+        <a class="halim-thumb" href="https://hoathinh3d.us/pham-nhan-tu-tien-phan-3">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="pham-nhan-tu-tien-phan-3-1-300x450.webp" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Phàm Nhân Tu Tiên Phần 3</h2>
+            <p class="original-title">Fanren Xiu Xian Chuan SS3</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-124">
+        <a class="halim-thumb" href="https://hoathinh3d.us/su-huynh-a-su-huynh">
+            <div class="film">
+        <figure>        
+            <img  class="photo" src="su-huynh-a-su-huynh-300x450.webp" alt="">
+        </figure>    
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Sư Huynh A Sư Huynh</h2>
+            <p class="original-title">Shi Xiong A Shi Xiong</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-123">
+        <a class="halim-thumb" href="https://hoathinh3d.us/tay-hanh-ky-phan-5">
+            <div class="film">
+        <figure>
+            <img  class="photo" src="tay-hanh-ky-phan-5-1-300x450.jpg" alt="">
+        </figure>
+        <div class="halim-post-title-box">
+            <div class="halim-post-title">
+            <h2 class="entry-title">Tây Hành Kỷ Phần 5</h2>
+            <p class="original-title">The Westward SS5</p>
+            </div>
+        </div>
+            </div>
+        </a>
+        </article>
+        <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-234">
+        <a class="halim-thumb" href="https://hoathinh3d.us/thuong-nguyen-do">
+            <div class="film">
+            <figure>
+                <img  class="photo" src="thuong-nguyen-do-300x450.webp" alt="">
+            </figure>
+            <div class="halim-post-title-box">
+                <div class="halim-post-title">
+                <h2 class="entry-title">Thương Nguyên Đồ</h2>
+                <p class="original-title">Cang Yuan Tu</p>
+                </div>
+            </div>
+                </div>
+        </a>
+            </article>
+        </div>
+    </section> 
+    </main>
+    </div>
+</div>
+
+    <div class="end">
+        <div class="end1">
+            <div class="logo1">
+            <div class="foter-logo">
+                <img src="logoHoathinh.webp"  alt="">
+                <span class="social">
+                <i class="fa-brands fa-facebook-f"></i>
+                </span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="cap">
+        <h5>© Copyright ® 2024 HOATHINH3D.</h5>
+    </div>
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
