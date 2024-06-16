@@ -1,0 +1,828 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #222d38;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+body, html {
+    overflow-x: hidden;
+}
+
+img, iframe {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .some-class {
+        width: 100%;
+    }
+}
+@media (min-width:768px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 70px;
+    }
+    .logo{
+        flex: 1;
+        margin-left: 13.5%;
+        cursor: pointer;
+    }
+    .icon{
+        flex: 1;
+        padding-left: 10%;
+        padding-right: 5%;
+        padding-top: 15px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    .search{
+        flex: 2;
+        margin-top: 16px;
+        color: white ;
+        position: relative;
+        font-size: 17px;
+    }
+    .search .fas{
+        position: absolute;
+        left: 10px;
+        transform: translateY(40%);
+        pointer-events: none;
+    }
+    .navbar-container{
+        padding-right: 14.5%;
+        padding-left: 14.3%;
+        background-color: black;
+        display: flex;
+        flex:none ;
+    }
+    .dot-container{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 0;
+        width: 100%;
+        justify-content: center;
+        padding-left: 40%;
+        background: #151d25;
+    }
+    .dot{
+        margin-bottom: 15px;
+        height: 10px;
+        width: 25px;
+        background-color: cornflowerblue;
+        margin-right: 15px;
+    }
+}
+@media (max-width:520px){
+    .header{
+        height: 170px;
+    }
+    .logo{
+        width: 100%;
+        text-align: center;
+    }
+    .search{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .icon{
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .search .fas{
+        margin-top: 1.5%;
+        margin-left: 10%;
+        position: absolute;
+        pointer-events: none;
+    }
+    .navbar-container{
+        background-color: black;
+        display: flex;
+        flex:none ;
+        margin-bottom: 10px;
+    }
+}
+.search input{
+    color: white;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    width: 400px;
+}
+.ui-autocomplete.ajax-results {
+    position: absolute;
+    width: 400px;
+}
+.ui-autocomplete {
+    background-color: rgb(23, 30, 36);
+    list-style: none;
+    border: 1px solid #273e52;
+    margin: 0;
+    display: block;
+    padding: 0;
+    z-index: 100;
+    border-top: none;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+.ui-autocomplete.ajax-results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid lightslategrey;
+}
+.ui-autocomplete.ajax-results li {
+    width: 400px;
+    height: 60px;
+    padding: 10px;
+    border-bottom: 1px solid lightslategrey;
+    cursor: pointer;
+}
+.ui-autocomplete.ajax-results li:last-child {
+    border-bottom: none;
+}
+.ui-autocomplete.ajax-results li a {
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+}
+.ui-autocomplete.ajax-results li img {
+    width: 30px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.product-list{
+    z-index: 100;
+    position: absolute;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+    display: none;
+    max-height: 200px;
+    border: 1px solid lightslategrey;
+    width: 400px;
+}
+.search {
+    position: relative; /* Đảm bảo phần tử #search là relative để dễ dàng xác định vị trí của sản phẩm */
+}
+.product-list.visible {
+    display: block;
+}
+.product{
+    display: flex;
+    z-index: 100;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    align-items: center;
+    overflow-y: auto;
+    cursor: pointer;
+    width: 400px;
+    max-height: 200px;
+    border: 1px solid lightslategrey;
+}
+.product-list.visible {
+    display: block;
+}
+.product-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+.hidden {
+    display: none;
+}
+.product:hover{
+    color: #3b6080;
+}
+.product img{
+    width: 30px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.product h2{
+    height: 20px;
+    font-size: 15px;
+}
+.product .h2{
+    width:410px;
+    height:40px;
+    font-size: 15px;
+    align-items: center;
+}
+.no-results {
+    font-size: 15px;
+    color: red;
+    padding-left: 10px;
+    align-items: center;
+}
+.in::placeholder{
+    font-size: 14px;
+}
+.result-item {
+    padding: 5px 0;
+}
+.search .fas{
+    position: absolute;
+    left: 10px;
+    transform: translateY(40%);
+    pointer-events: none;
+}
+button{
+    flex: 1;
+    cursor: pointer;
+    
+}
+button:hover{
+    background-color: lightslategrey;
+}
+
+.icon button{
+    width: 40px;
+    height: 40px;
+    padding: 10px 10px;
+    color: whitesmoke;
+    margin: 0 3px;
+    background-color: black;
+    display: inline-flex; /* Để sử dụng flexbox cho nội dung bên trong */
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    justify-content: center;
+}
+.icon button .fa-solid{
+    font-size: 15px;
+    cursor: pointer;
+    background: black;
+}
+.slider{
+    margin: 30px;
+}
+
+li{
+    list-style: none;
+}
+.sub-net{
+    position: absolute;
+    width: 140px;
+    padding: 10px 0 10px 20px;
+    visibility: hidden;
+}
+.navbar-container .fa-solid{
+    font-size: 15px;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: black;
+}
+.navbar-container .fa-regular{
+    font-size: 15px;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: black;
+}
+.navbar-container > li:hover .sub-net{
+    visibility: visible;
+}
+.navbar-container .ic{
+    background-color: black;
+}
+.ic{
+    background-color: black;
+    color: aliceblue;
+    border: none;
+    padding: 5px 6px;
+    align-items: center;
+}
+ul {
+    color: aliceblue;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+a{
+    color: aliceblue;
+    background-color: #222d47;
+
+}
+a:hover{
+    color: cadetblue;
+}
+li{
+    z-index: 10; /* Đưa phần tử lên trên các phần tử khác */
+}.sub-net li{
+    padding-top: 15px;
+}
+.ic:hover{
+    background-color: #222d47;
+}
+.ic:hover i{
+    background-color: #222d47;
+}
+.ic .fa-solid{
+    background-color: black;
+    margin-left: -4px;
+}
+.ic .fa-regular{
+    background-color: black;
+    margin-left: -5px;
+
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Kiểu cho màn hình lớn */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Kiểu cho màn hình rất lớn */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+body.halimthemes {
+    color: #a5a5a5;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background: #222d38 url(assets/images/halimBg.png) fixed center;
+    -webkit-transition: background-color 150ms ease-out !important;
+    transition: background-color 150ms ease-out !important;
+}
+#wrapper{
+    background: #151d25;
+    padding: 0 0 15px ;
+    -webkit-box-shadow: 0px 3px 14px -1px rgb(22, 29, 35);
+    -moz-box-shadow: 0px 3px 14px -1px rgb(22, 29, 35);
+    box-shadow: 0px 3px 20px 2px rgb(22, 29, 35);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.im{
+    display: block;
+    position: relative;
+    padding-top: 55%;
+    transition: 0.3s;
+    background: #151d25;
+}
+.im img{
+    display: block;
+    position: absolute;;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #151d25;
+    overflow: hidden;
+}
+#slider{
+    background: #151d25;
+    overflow: hidden;
+}
+.dot.active{
+    background-color: olivedrab;
+}
+.date {
+    background: #151d25;
+    display: flex;
+    padding-top: 20px;
+}
+.date button{
+    width: 150px;
+    height: 50px;
+    margin: 0 2px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #23232a;
+    color: aliceblue;
+}
+.date button:hover{
+    background-color: #333;
+} 
+.setcion-bar{
+    position: relative;
+    padding: 15px 0;
+}
+.section-title{
+    font-size: 16px;
+    line-height: 11px;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+    display: flow-root;
+    padding-left: 20px;
+    background: #151d25;
+}
+.section-title span {
+    position: relative;
+}
+.section-title span {
+    float: left;
+    border-bottom: 1px solid #da1b60 !important;
+    background: linear-gradient(to right, #ff8a00, #ff2070);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    padding: 10px 0;
+}
+.section-title:before {
+    content: '';
+    border-bottom: 1px solid #1e2732 !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #151d25;
+}
+.section-title::after {
+    clear: both;
+    background: #151d25;
+}
+.md{
+    background: #151d25;
+}
+/* Đảm bảo rằng hình ảnh thu nhỏ không bị vỡ */
+.thumb img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Định dạng tiêu đề bài viết */
+.article-title {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Định dạng mô tả bài viết */
+.article-description {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Định dạng phần tử bài viết trong lưới */
+.grid-item {
+    position: relative;
+}
+
+/* Định dạng các lớp lưới của Bootstrap */
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, 
+.col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, 
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, 
+.col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12,
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, 
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Kích thước các phần tử cho các thiết bị khác nhau */
+.col-md-3, .col-sm-3, .col-xs-6 {
+    width: 25%;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+@media (min-width: 1024px) {
+    article.thumb.grid-item {
+        width: 20%;
+    }
+
+    article.post-111,
+    article.post-123,
+    article.post-124,
+    article.post-125,
+    article.post-126,
+    article.post-127,
+    article.post-128,
+    article.post-222,
+    article.post-234,
+    article.post-235,
+    article.post-344,
+    article.post-345,
+    article.post-347 {
+        /* Thêm các quy tắc cụ thể cho các bài viết nếu cần */
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-3  {
+        width: 25%;
+    }
+    article.thumb.grid-item {
+        width: 25%;
+    }
+
+    article.post-111,
+    article.post-123,
+    article.post-124,
+    article.post-125,
+    article.post-126,
+    article.post-127,
+    article.post-128,
+    article.post-222,
+    article.post-234,
+    article.post-235,
+    article.post-344,
+    article.post-345,
+    article.post-347 {
+        /* Thêm các quy tắc cụ thể cho các bài viết nếu cần */
+    }
+}
+@media (min-width: 768px) {
+    .col-md-3  {
+        width: 25%;
+    }
+    article.thumb.grid-item {
+        width: 25%;
+    }
+
+    article.post-111,
+    article.post-123,
+    article.post-124,
+    article.post-125,
+    article.post-126,
+    article.post-127,
+    article.post-128,
+    article.post-222,
+    article.post-234,
+    article.post-235,
+    article.post-344,
+    article.post-345,
+    article.post-347 {
+        /* Thêm các quy tắc cụ thể cho các bài viết nếu cần */
+    }
+}
+@media (max-width: 520px) {
+    .col-md-3 {
+        width: 50%;
+    }
+
+    .article-title {
+        font-size: 1.2em;
+    }
+
+    .article-description {
+        font-size: 0.9em;
+    }
+}
+article{
+    background: #151d25;
+    display: block;
+    unicode-bidi: isolate;
+}
+figure{
+    overflow: hidden; /* Ẩn phần bị phóng to của hình ảnh */
+    position: relative; /* Định vị cho lớp phủ gradient */
+    border-radius: 6px;
+}
+.md a{
+    background: #151d25;
+}
+.film{
+    background: #151d25;
+    margin-top: 10px;  
+    cursor:pointer;
+}
+.film h2{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+    font-size: 13px;
+    font-family: var(--main-text-font);
+    color: white;
+}
+.film p{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+    font-size: 11px;
+    margin-top: 10px;
+    font-family: var(--main-text-font);
+    color: white;
+}
+.film img{
+    background: #151d25;
+    border-radius: 5px;
+    transition: transfrom 0.3s ease;
+}
+.md a.halim-thumb {
+    position: relative;
+    display: inline-block;
+    -webkit-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .7s ease;
+    width: 100%;
+}
+@media only screen and (max-width: 1240px) {
+    .grid-item img {
+        height: 260px;
+    }
+}
+.film:hover .photo,.entry-title:hover~.film.photo,.original-title:hover~.film.photo{
+    transform: scale(1.05,1.05);
+}
+.halim-post-title-box {
+    position: absolute;
+    line-height: 18px;
+    padding: 80px 0 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(6, 6, 6, 0.55) 30%, rgba(0, 0, 0, 0.92) 100%);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.halim-post-title {
+    position: absolute;
+    background: rgba(0, 0, 0, 0);
+    line-height: 18px;
+    padding: 8px 10px 4px;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+}
+.end{
+    background: rgb(16, 23, 32) url(assets/images/footer-bg.png) no-repeat top right;
+    border-top: 4px solid #0e1215;
+}
+.end1{
+    border-bottom: 1px ;
+    margin-left: 14%;
+    margin-bottom: 1px;
+}
+.end1 img{
+    width: 150px;
+    background-color: #0e1215;
+}
+.logo1{
+    background: rgb(16, 23, 32) url(assets/images/footer-bg.png) no-repeat top right;
+}
+.end1 i{
+    width: 20px;
+    height: 20px;
+    left: 50px;
+    border: 0;
+    padding: 4px;
+    color: white;
+    background-color: #0e1215;
+}
+.end1 .social{
+    background-color: #0e1215;
+}
+.logo1 .foter-logo{
+    padding: 15px 20px;
+    display: inline-block;
+    background-color: #0e1215;
+}
+.social{
+    float: right;
+    padding-left: 70px;
+    margin-top: 13px;
+}
+.fa-brands:hover{
+    background-color: blue;
+}
+.cap h5{
+    padding-left: 14%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 25px;
+    margin: 0;
+    background-color: #0e1215;
+}
+h5{
+    color: white;
+}
+
+@media (min-width: 1200px) {
+    #main-contents {
+        width: 100%;
+    }
+}
+#main-contents {
+    background: #151d25;
+    position: relative;
+    width: 100%;
+}
+@media (min-width: 992px) {
+    .col-md-8 {
+        width: 66.66666667%;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+}
+@media (min-width: 768px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+@media (min-width: 768px) {
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+        float: left;
+    }
+}
+.col-xs-12 {
+    width: 100%;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+:host, :root {
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
