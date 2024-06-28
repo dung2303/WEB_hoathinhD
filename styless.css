@@ -77,6 +77,23 @@ img, iframe {
         background-color: cornflowerblue;
         margin-right: 15px;
     }
+    .date {
+    background: #151d25;
+    display: flex;
+    padding-top: 20px;
+}
+.date button{
+    width: 150px;
+    height: 50px;
+    margin: 0 2px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #23232a;
+    color: aliceblue;
+}
+.date button:hover{
+    background-color: #333;
+} 
 }
 @media (max-width:768px){
     .header{
@@ -111,6 +128,23 @@ img, iframe {
         flex:none ;
         margin-bottom: 10px;
     }
+    .date {
+    background: #151d25;
+    display: flex;
+    padding-top: 20px;
+}
+.date button{
+    width: 100px;
+    height: 75px;
+    margin: 0 2px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #23232a;
+    color: aliceblue;
+}
+.date button:hover{
+    background-color: #333;
+} 
 }
 .search input{
     color: white;
@@ -418,23 +452,6 @@ body.halimthemes {
 .dot.active{
     background-color: olivedrab;
 }
-.date {
-    background: #151d25;
-    display: flex;
-    padding-top: 20px;
-}
-.date button{
-    width: 150px;
-    height: 50px;
-    margin: 0 2px;
-    font-size: 15px;
-    border-radius: 5px;
-    background-color: #23232a;
-    color: aliceblue;
-}
-.date button:hover{
-    background-color: #333;
-} 
 .setcion-bar{
     position: relative;
     padding: 15px 0;
